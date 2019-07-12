@@ -23,6 +23,10 @@ public class PlayerControl : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         body.velocity = movement * speed;
+        if (body.velocity.magnitude > speed)
+        {
+            body.velocity = body.velocity.normalized * speed;
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             body.velocity *= 0.5f;
