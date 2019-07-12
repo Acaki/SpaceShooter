@@ -14,6 +14,8 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed;
     public Boundary boundary;
+    public Sprite player, playerRight, playerLeft;
+    
     private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -29,6 +31,27 @@ public class PlayerControl : MonoBehaviour
             Mathf.Clamp(body.position.x, boundary.xMin, boundary.xMax),
             Mathf.Clamp(body.position.y, boundary.yMin, boundary.yMax)
         );
-        
+    }
+
+    private void Update()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            spriteRenderer.sprite = playerRight;
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            spriteRenderer.sprite = player;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            spriteRenderer.sprite = playerLeft;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            spriteRenderer.sprite = player;
+        }
     }
 }
+
