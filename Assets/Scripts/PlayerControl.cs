@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class Boundary
 {
     public float xMin, xMax, yMin, yMax;
