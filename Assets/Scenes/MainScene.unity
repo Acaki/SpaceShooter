@@ -348,7 +348,7 @@ MonoBehaviour:
   playerLeft: {fileID: 21300000, guid: 026b7968627ba11409753fb00dbcade3, type: 3}
   shot: {fileID: 5967619805801408328, guid: 5db17ed08e2628e459ce933b340fe2fb, type: 3}
   shotSpawn: {fileID: 953971048}
-  fireRate: 0.1
+  fireRate: 0.075
 --- !u!1 &953971047
 GameObject:
   m_ObjectHideFlags: 0
