@@ -12,8 +12,41 @@ public class PlayerControl : MonoBehaviour
     public float speed;
     public Boundary boundary;
     public Sprite player, playerRight, playerLeft;
+
+    public GameObject shot;
+    public Transform shotSpawn;
+    public float fireRate;
+
+    private float _nextFire;
     
-    private void FixedUpdate()
+    private void Update()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            spriteRenderer.sprite = playerRight;
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            spriteRenderer.sprite = player;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            spriteRenderer.sprite = playerLeft;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            spriteRenderer.sprite = player;
+        }
+        
+        if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)
+        {
+            _nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn);
+        }
+    }
+    
+    void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
@@ -34,25 +67,5 @@ public class PlayerControl : MonoBehaviour
         );
     }
 
-    private void Update()
-    {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            spriteRenderer.sprite = playerRight;
-        }
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            spriteRenderer.sprite = player;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            spriteRenderer.sprite = playerLeft;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            spriteRenderer.sprite = player;
-        }
-    }
 }
 
