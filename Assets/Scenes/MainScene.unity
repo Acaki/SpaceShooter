@@ -233,7 +233,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09}
@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 721981566}
   - component: {fileID: 721981564}
   - component: {fileID: 721981565}
+  - component: {fileID: 721981568}
   m_Layer: 0
   m_Name: meteorSmall
   m_TagString: Untagged
@@ -393,7 +394,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0129262805, y: 0.011403456}
@@ -483,6 +484,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &721981568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721981562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c994efb10e70dd43992c7f902b45c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953971047
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +758,7 @@ GameObject:
   - component: {fileID: 1829334252}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
